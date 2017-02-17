@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>NewsLine</title>
+    <title> NewsLine</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -36,13 +36,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">NewsLine</a>
+            <b><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-list-alt"></span> NewsLine</a></b>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">About</a>
+                    <a href="#"> <span class="glyphicon glyphicon-question-sign"></span> About</a>
                 </li>
             </ul>
         </div>
@@ -60,13 +60,13 @@
         <div class="col-md-8">
 
             <h1 class="page-header">
-                NewsLine
+                <span class="glyphicon glyphicon-list-alt"></span> NewsLine
                 <small>Simple example of news</small>
             </h1>
 
             <!-- First Blog Post -->
             <h2>
-                <a href="#">News Title </a><a class="btn btn-success pull-right">News Category</a>
+                <a href="#">News Title </a><a class="btn btn-success pull-right"><span class="glyphicon glyphicon-th-list"></span> News Category</a>
             </h2>
             <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
             <hr>
@@ -79,7 +79,7 @@
 
             <!-- Second Blog Post -->
             <h2>
-                <a href="#">News Title </a><a class="btn btn-success pull-right">News Category</a>
+                <a href="#">News Title </a><a class="btn btn-success pull-right"><span class="glyphicon glyphicon-th-list"></span> News Category</a>
             </h2>
             <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
             <hr>
@@ -92,7 +92,7 @@
 
             <!-- Third Blog Post -->
             <h2>
-                <a href="#">News Title </a><a class="btn btn-success pull-right">News Category</a>
+                <a href="#">News Title </a><a class="btn btn-success pull-right"><span class="glyphicon glyphicon-th-list"></span> News Category</a>
             </h2>
             <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
             <hr>
