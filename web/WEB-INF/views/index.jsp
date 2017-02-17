@@ -66,7 +66,7 @@
 
             <!-- First Blog Post -->
             <h2>
-                <a href="#">News Title</a>
+                <a href="#">News Title </a><a class="btn btn-success pull-right">News Category</a>
             </h2>
             <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
             <hr>
@@ -79,7 +79,7 @@
 
             <!-- Second Blog Post -->
             <h2>
-                <a href="#">News Title</a>
+                <a href="#">News Title </a><a class="btn btn-success pull-right">News Category</a>
             </h2>
             <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
             <hr>
@@ -92,7 +92,7 @@
 
             <!-- Third Blog Post -->
             <h2>
-                <a href="#">News Title</a>
+                <a href="#">News Title </a><a class="btn btn-success pull-right">News Category</a>
             </h2>
             <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
             <hr>
