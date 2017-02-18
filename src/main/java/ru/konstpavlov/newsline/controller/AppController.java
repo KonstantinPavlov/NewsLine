@@ -79,4 +79,21 @@ public class AppController {
         modelAndView.addObject("news",headLine);
         return modelAndView;
     }
+
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public ModelAndView editHeadLine(@PathVariable("id") Long id){
+        HeadLine headLine = headLineService.getHeadLinebyId(id);
+        ModelAndView modelAndView = new ModelAndView("updateHeadLine");
+        modelAndView.addObject("categories",categoryList);
+        modelAndView.addObject("news",headLine);
+        return modelAndView;
+    }
+    @RequestMapping(value = "/updateNews/{id}", method = RequestMethod.POST)
+    public ModelAndView updateHeadLine(@PathVariable("id") Long id, @ModelAttribute("headline") HeadLine headLine){
+        headLine.setId(id);
+        headLine.setDate(new Date());
+        headLineService.updateHeadLine(headLine);
+        String message = "You successfully update a: "+ headLine.getTitle();
+        return new ModelAndView("redirect:/","addMessage", message) ;
+    }
 }
