@@ -10,7 +10,6 @@
                         </button>
                         </span>
     </div>
-    <a href="${pageContext.request.contextPath}/add"> <button class="btn btn-default" type="button"> Add news</button></a>
     <!-- /.input-group -->
 </div>
 
@@ -32,6 +31,6 @@
 
 <!-- Side Widget Well -->
 <div class="well">
-    <h4>Side Widget Well</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+    <h4>You can add here <span class="glyphicon glyphicon-arrow-right"></span><a href="${pageContext.request.contextPath}/add"> <button class="btn btn-success" type="button"><span class="glyphicon glyphicon-plus-sign"></span> Add new</button></a></h4>
+
 </div>
