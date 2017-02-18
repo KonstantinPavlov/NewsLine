@@ -8,18 +8,13 @@
 <div class="container">
 
     <div class="row">
-
-
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-
             <h1 class="page-header">
                 <span class="glyphicon glyphicon-list-alt"></span> NewsLine
                 <small>Add new news</small>
             </h1>
             <!-- First Blog Post -->
-
-
             <form:form id="headline" action="${pageContext.request.contextPath}/addNews" method="post" modelAttribute="headline" accept-charset="UTF-8">
                 <fieldset>
                     <div class="form-group">
@@ -49,7 +44,6 @@
             </form:form>
 
         </div>
-
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
             <jsp:include page="inc/rightMenu.jsp"/>
