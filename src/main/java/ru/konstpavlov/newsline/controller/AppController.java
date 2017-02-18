@@ -3,10 +3,7 @@ package ru.konstpavlov.newsline.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import ru.konstpavlov.newsline.entity.Category;
 import ru.konstpavlov.newsline.entity.HeadLine;
@@ -63,6 +60,14 @@ public class AppController {
         headline.setDate(new Date());
         headLineService.addHeadLine(headline);
         String message = "You successfully added a: "+ headline.getTitle();
+        return new ModelAndView("redirect:/","addMessage", message) ;
+    }
+
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteHeadLine(@PathVariable("id") Long id){
+        HeadLine headLine = headLineService.getHeadLinebyId(id);
+        headLineService.deleteHeadLine(headLine);
+        String message = "You successfully delete a: "+ headLine.getTitle();
         return new ModelAndView("redirect:/","addMessage", message) ;
     }
 }
