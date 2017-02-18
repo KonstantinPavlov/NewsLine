@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"ru.konstpavlov.newsline.config", "ru.konstpavlov.newsline.controller.*","ru.konstpavlov.newsline.*"})
+@ComponentScan({"ru.konstpavlov.newsline.config", "ru.konstpavlov.newsline.controller.*","ru.konstpavlov.newsline.*","ru.konstpavlov.newsline.service.*","ru.konstpavlov.newsline.entity.*"})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public InternalResourceViewResolver viewResolver() {
