@@ -21,7 +21,7 @@
 
             <c:forEach items="${headLines}" var="news">
                 <h2>
-                    <a href="#"><c:out value="${news.title}"/> </a>
+                    <a href="${pageContext.request.contextPath}/news/${news.id}"><c:out value="${news.title}"/> </a>
                     <div class="pull-right">
                         <h4>
                         <a class="btn btn-success "><span class="glyphicon glyphicon-th-list"></span> <c:out value="${news.category}"/></a>
@@ -35,10 +35,10 @@
                     <c:out value="${news.date.toLocaleString()}"/>
                 </p>
                 <hr>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <a href="${pageContext.request.contextPath}/news/${news.id}"> <img class="img-responsive" src="http://placehold.it/900x300" alt=""></a>
                 <hr>
                 <p><c:out value="${news.shortDescription}"/></p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="${pageContext.request.contextPath}/news/${news.id}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                 <hr>
             </c:forEach>
             <!-- Pager -->
