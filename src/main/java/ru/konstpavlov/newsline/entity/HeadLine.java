@@ -4,6 +4,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.Date;
 
 
 @Entity
@@ -22,8 +23,8 @@ public class HeadLine {
 
     private Category category;
 
-    @Type(type = "org.hibernate.type.CalendarType")
-    private Calendar date;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date date;
 
     public long getId() {
         return id;
@@ -57,11 +58,11 @@ public class HeadLine {
         this.shortDescription = shortDescription;
     }
 
-    public Calendar getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Calendar date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
