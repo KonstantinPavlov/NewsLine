@@ -70,4 +70,13 @@ public class AppController {
         String message = "You successfully delete a: "+ headLine.getTitle();
         return new ModelAndView("redirect:/","addMessage", message) ;
     }
+
+    @RequestMapping(value = "/news/{id}", method = RequestMethod.GET)
+    public ModelAndView showHeadLine(@PathVariable("id") Long id){
+        HeadLine headLine = headLineService.getHeadLinebyId(id);
+        ModelAndView modelAndView = new ModelAndView("headLine");
+        modelAndView.addObject("categories",categoryList);
+        modelAndView.addObject("news",headLine);
+        return modelAndView;
+    }
 }
