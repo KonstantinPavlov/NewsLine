@@ -35,19 +35,23 @@ public class AppController {
         categoryList.add(Category.AUTOMOBILES);
     }
 
-    @RequestMapping("/")
-    public ModelAndView index(Model model){
-
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView index(Model model, @RequestParam( value = "category", required = false) String category,@RequestParam( value = "search", required = false) String searchString ){
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("categories",categoryList);
-        modelAndView.addObject("headLines",headLineService.getAllHeadLine());
+        if (category !=null){
+            modelAndView.addObject("headLines",headLineService.getAllCategoryHeadLine(Category.valueOf(category)));
+            modelAndView.addObject("currCategory",Category.valueOf(category).toString());
+        }
+        else {
+            modelAndView.addObject("headLines", headLineService.getAllHeadLine());
 
+        }
         return modelAndView;
     }
 
     @RequestMapping("/add")
     public ModelAndView addHeadLine(@ModelAttribute("headline") HeadLine headline){
-
         ModelAndView modelAndView = new ModelAndView("addHeadLine");
         modelAndView.addObject("categories",categoryList);
         modelAndView.addObject("headline",new HeadLine());

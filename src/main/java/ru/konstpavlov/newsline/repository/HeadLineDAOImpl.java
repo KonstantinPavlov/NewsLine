@@ -51,7 +51,6 @@ public class HeadLineDAOImpl implements HeadLineDAO {
 
     @Override
     public List<HeadLine> getAllHeadLine() {
-
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(HeadLine.class);
         criteria.addOrder(Order.desc("date"));
         return (List<HeadLine>) criteria.list();
@@ -59,9 +58,9 @@ public class HeadLineDAOImpl implements HeadLineDAO {
 
     @Override
     public List<HeadLine> getAllCategoryHeadLine(Category category) {
-        Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("select h.* from ru.konstpavlov.newsline.entity.HeadLine h where h.category =:category order by h.date desc ");
-        query.setParameter("category",category);
-        return (List<HeadLine>) query.list();
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(HeadLine.class);
+        criteria.add(Restrictions.eq("category",category));
+        criteria.addOrder(Order.desc("date"));
+        return (List<HeadLine>) criteria.list();
     }
 }

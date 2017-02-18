@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="inc/header.jsp"/>
 <!-- Page Content -->
@@ -8,7 +9,14 @@
         <div class="col-md-8">
             <h1 class="page-header">
                 <span class="glyphicon glyphicon-list-alt"></span> NewsLine
-                <small>Simple example of news</small>
+                <small>
+                    <c:if test="${ param.category != null}">
+                        <c:out value="${currCategory}"></c:out>
+                    </c:if>
+                    <c:if test="${ param.category == null}">
+                       Simple example of news
+                    </c:if>
+                </small>
             </h1>
 
             <div class="timeOut">
@@ -19,12 +27,16 @@
             </c:if>
             </div>
 
+            <c:if test="${empty headLines }">
+                <p>There is no, any such news :(</p>
+            </c:if>
+
             <c:forEach items="${headLines}" var="news">
                 <h2>
                     <a href="${pageContext.request.contextPath}/news/${news.id}"><c:out value="${news.title}"/> </a>
                     <div class="pull-right">
                         <h4>
-                        <a class="btn btn-success "><span class="glyphicon glyphicon-th-list"></span> <c:out value="${news.category}"/></a>
+                        <a class="btn btn-default " href="${pageContext.request.contextPath}/?category=${news.category}"><span class="glyphicon glyphicon-th-list"></span> <c:out value="${news.category}"/></a>
                         <a href="${pageContext.request.contextPath}/edit/${news.id}"><span class="glyphicon glyphicon-pencil"></span></a>
                         <a href="${pageContext.request.contextPath}/delete/${news.id}"><span class="glyphicon glyphicon-remove"></span></a>
                         </h4>
@@ -42,14 +54,7 @@
                 <hr>
             </c:forEach>
             <!-- Pager -->
-            <ul class="pager">
-                <li class="previous">
-                    <a href="#">&larr; Older</a>
-                </li>
-                <li class="next">
-                    <a href="#">Newer &rarr;</a>
-                </li>
-            </ul>
+
         </div>
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
@@ -64,3 +69,5 @@
 <script type="text/javascript">
     setTimeout(function(){$('.timeOut').fadeOut('slow')},5000);
 </script>
+
+<script></script>
