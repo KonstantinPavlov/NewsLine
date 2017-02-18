@@ -51,6 +51,12 @@
             <artifactId>postgresql</artifactId>
             <version>9.4.1211.jre7</version>
         </dependency>
+        <!--Spring DB-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
         <!-- Hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
