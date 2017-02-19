@@ -19,7 +19,7 @@
                 <fieldset>
                     <div class="form-group">
                         <label>Title</label>
-                        <input class="form-control" name="title" id="title" placeholder="Title of news" type="text" value="${news.title}">
+                        <input class="form-control" name="title" id="title" placeholder="Title of news" type="text" value="${news.title}" required>
                     </div>
                     <div class="form-group">
                         <label>Category</label>
@@ -37,11 +37,11 @@
                     </div>
                     <div class="form-group">
                         <label>Short description</label>
-                        <textarea class="form-control" name="shortDescription" id="shortDescription" placeholder="Short description of news" rows="2"><c:out value="${news.shortDescription}"/></textarea>
+                        <textarea class="form-control" name="shortDescription" id="shortDescription" placeholder="Short description of news" rows="2" required><c:out value="${news.shortDescription}"/></textarea>
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control" name="description" id="description" placeholder="Description of news" rows="10"><c:out value="${news.description}"/></textarea>
+                        <textarea class="form-control" name="description" id="description" placeholder="Description of news" rows="10" required><c:out value="${news.description}"/></textarea>
                     </div>
                 </fieldset>
                 <div>
