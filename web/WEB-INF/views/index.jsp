@@ -13,7 +13,7 @@
                     <c:if test="${ param.category != null}">
                         <c:out value="${currCategory}"></c:out>
                     </c:if>
-                    <c:if test="${ param.category == null}">
+                    <c:if test="${ param.category == null }">
                        Simple example of news
                     </c:if>
                 </small>
@@ -27,7 +27,13 @@
             </c:if>
             </div>
 
-            <c:if test="${empty headLines }">
+            <c:if test="${param.search != null}">
+                <c:if test="${!param.search.equals('')}">
+                <h4><em><p>Search result for : <c:out value="${param.search}"></c:out></p></em></h4>
+                </c:if>
+            </c:if>
+
+            <c:if test="${empty headLines}">
                 <p>There is no, any such news :(</p>
             </c:if>
 

@@ -63,4 +63,12 @@ public class HeadLineDAOImpl implements HeadLineDAO {
         criteria.addOrder(Order.desc("date"));
         return (List<HeadLine>) criteria.list();
     }
+
+    @Override
+    public List<HeadLine> searchHeadLine(String searchString) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from ru.konstpavlov.newsline.entity.HeadLine h where h.title like :search or  h.shortDescription like :search order by  h.date desc ");
+        query.setParameter("search","%"+searchString+"%");
+        return (List<HeadLine>) query.list();
+    }
 }

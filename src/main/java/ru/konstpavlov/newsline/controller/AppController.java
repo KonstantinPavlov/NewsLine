@@ -43,9 +43,16 @@ public class AppController {
             modelAndView.addObject("headLines",headLineService.getAllCategoryHeadLine(Category.valueOf(category)));
             modelAndView.addObject("currCategory",Category.valueOf(category).toString());
         }
+        else if (searchString != null ){
+            if(searchString.equals("")){
+                modelAndView.addObject("headLines", headLineService.getAllHeadLine());
+            }
+            else {
+                modelAndView.addObject("headLines", headLineService.searchHeadLine(searchString));
+            }
+        }
         else {
             modelAndView.addObject("headLines", headLineService.getAllHeadLine());
-
         }
         return modelAndView;
     }
