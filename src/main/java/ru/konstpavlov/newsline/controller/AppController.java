@@ -57,6 +57,11 @@ public class AppController {
         return modelAndView;
     }
 
+    @RequestMapping("/about")
+    public String about(Model model){
+        return "about";
+    }
+
     @RequestMapping("/add")
     public ModelAndView addHeadLine(@ModelAttribute("headline") HeadLine headline){
         ModelAndView modelAndView = new ModelAndView("addHeadLine");
