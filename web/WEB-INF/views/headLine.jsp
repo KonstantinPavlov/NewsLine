@@ -15,7 +15,34 @@
             <hr>
                     <h2 href="#"><span class="glyphicon glyphicon-tasks"></span> <c:out value="${news.title}"/>
                         <a href="${pageContext.request.contextPath}/edit/${news.id}"><span class="glyphicon glyphicon-pencil"></span></a>
-                        <a href="${pageContext.request.contextPath}/delete/${news.id}"><span class="glyphicon glyphicon-remove"></span></a>
+
+                        <!--Modal for delete operation -->
+                        <a data-toggle="modal" data-target="#modal${news.id}">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+
+                        <div class="modal fade" id="modal${news.id}" tabindex="-1" role="dialog" aria-labelbody="mymodalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button class="close" data-dismiss="modal" aria-label="close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h4 class="modal-title" id="mymodallabel"> Delete news</h4>
+                                    </div>
+                                    <h4>
+                                    <div class="modal-body">
+                                        Do you want to delete: <c:out value="${news.title}"/> ?
+                                    </div>
+                                    </h4>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                                        <a href="${pageContext.request.contextPath}/delete/${news.id}"> <button class="btn btn-primary" type="button">Delete</button></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </h2>
                     <h3>
                         <span class="glyphicon glyphicon-th-list"></span> <c:out value="${news.category}"/>

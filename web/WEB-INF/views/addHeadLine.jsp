@@ -19,7 +19,7 @@
                 <fieldset>
                     <div class="form-group">
                         <label>Title</label>
-                        <input class="form-control" name="title" id="title" placeholder="Title of news" type="text">
+                        <input class="form-control" name="title" id="title" placeholder="Title of news" type="text" required>
                     </div>
                     <div class="form-group">
                         <label>Category</label>
@@ -31,11 +31,11 @@
                     </div>
                     <div class="form-group">
                         <label>Short description</label>
-                        <textarea class="form-control" name="shortDescription" id="shortDescription" placeholder="Short description of news" rows="2"></textarea>
+                        <textarea class="form-control" name="shortDescription" id="shortDescription" placeholder="Short description of news" rows="2" required></textarea>
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control" name="description" id="description" placeholder="Description of news" rows="10"></textarea>
+                        <textarea class="form-control" name="description" id="description" placeholder="Description of news" rows="10" required></textarea>
                     </div>
                 </fieldset>
                 <div>

@@ -43,11 +43,23 @@ public class AppController {
             modelAndView.addObject("headLines",headLineService.getAllCategoryHeadLine(Category.valueOf(category)));
             modelAndView.addObject("currCategory",Category.valueOf(category).toString());
         }
+        else if (searchString != null ){
+            if(searchString.equals("")){
+                modelAndView.addObject("headLines", headLineService.getAllHeadLine());
+            }
+            else {
+                modelAndView.addObject("headLines", headLineService.searchHeadLine(searchString));
+            }
+        }
         else {
             modelAndView.addObject("headLines", headLineService.getAllHeadLine());
-
         }
         return modelAndView;
+    }
+
+    @RequestMapping("/about")
+    public String about(Model model){
+        return "about";
     }
 
     @RequestMapping("/add")
@@ -57,7 +69,6 @@ public class AppController {
         modelAndView.addObject("headline",new HeadLine());
         return modelAndView;
     }
-
 
     @RequestMapping(value = "/addNews", method = RequestMethod.POST)
     public ModelAndView addNewHeadLine(@ModelAttribute("headline") HeadLine headline){

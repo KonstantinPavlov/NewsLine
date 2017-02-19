@@ -44,7 +44,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="${pageContext.request.contextPath}/"> <span class="glyphicon glyphicon-question-sign"></span> About</a>
+                    <a href="${pageContext.request.contextPath}/about"> <span class="glyphicon glyphicon-question-sign"></span> About</a>
                 </li>
             </ul>
         </div>

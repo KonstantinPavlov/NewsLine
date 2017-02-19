@@ -13,7 +13,7 @@
                     <c:if test="${ param.category != null}">
                         <c:out value="${currCategory}"></c:out>
                     </c:if>
-                    <c:if test="${ param.category == null}">
+                    <c:if test="${ param.category == null }">
                        Simple example of news
                     </c:if>
                 </small>
@@ -27,7 +27,13 @@
             </c:if>
             </div>
 
-            <c:if test="${empty headLines }">
+            <c:if test="${param.search != null}">
+                <c:if test="${!param.search.equals('')}">
+                <h4><em><p>Search result for : <c:out value="${param.search}"></c:out></p></em></h4>
+                </c:if>
+            </c:if>
+
+            <c:if test="${empty headLines}">
                 <p>There is no, any such news :(</p>
             </c:if>
 
@@ -38,7 +44,32 @@
                         <h4>
                         <a class="btn btn-default " href="${pageContext.request.contextPath}/?category=${news.category}"><span class="glyphicon glyphicon-th-list"></span> <c:out value="${news.category}"/></a>
                         <a href="${pageContext.request.contextPath}/edit/${news.id}"><span class="glyphicon glyphicon-pencil"></span></a>
-                        <a href="${pageContext.request.contextPath}/delete/${news.id}"><span class="glyphicon glyphicon-remove"></span></a>
+
+                            <!--Modal for delete operation -->
+                            <a data-toggle="modal" data-target="#modal${news.id}">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+
+                            <div class="modal fade" id="modal${news.id}" tabindex="-1" role="dialog" aria-labelbody="mymodalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button class="close" data-dismiss="modal" aria-label="close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <h4 class="modal-title" id="mymodallabel"> Delete news</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            Do you want to delete: <c:out value="${news.title}"/> ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                                            <a href="${pageContext.request.contextPath}/delete/${news.id}"> <button class="btn btn-primary" type="button">Delete</button></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </h4>
                     </div>
                 </h2>

@@ -35,10 +35,16 @@ public class HeadLineService {
     public HeadLine getHeadLinebyId (long id){
         return headLineDAO.getHeadLine(id);
     }
+
     public List<HeadLine> getAllHeadLine(){
         return headLineDAO.getAllHeadLine();
     }
+
     public List<HeadLine> getAllCategoryHeadLine(Category category){
         return headLineDAO.getAllCategoryHeadLine(category);
+    }
+
+    public List<HeadLine> searchHeadLine(String searchString){
+        return  headLineDAO.searchHeadLine(searchString);
     }
 }

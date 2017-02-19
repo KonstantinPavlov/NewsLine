@@ -2,14 +2,16 @@
 <!-- Blog Search Well -->
 <div class="well">
     <h4>News Search</h4>
+    <form action="${pageContext.request.contextPath}/" method="get">
     <div class="input-group">
-        <input type="text" class="form-control">
+            <input type="text" class="form-control" name="search" value="${param.search}"/>
         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
+            <button class="btn btn-default" type="submit">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
     </div>
+    </form>
     <!-- /.input-group -->
 </div>
 

@@ -18,4 +18,6 @@ public interface HeadLineDAO {
     List<HeadLine> getAllHeadLine();
 
     List<HeadLine> getAllCategoryHeadLine(Category category);
+
+    List<HeadLine> searchHeadLine(String searchString);
 }
