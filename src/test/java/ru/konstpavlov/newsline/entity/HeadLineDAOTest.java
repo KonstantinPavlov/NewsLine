@@ -1,6 +1,5 @@
 package ru.konstpavlov.newsline.entity;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,7 +35,6 @@ public class HeadLineDAOTest {
         headLineDAO.addHeadLine(headLine);
         Assert.assertNotEquals(count,headLineDAO.getAllHeadLine().size());
         Assert.assertEquals(count+1,headLineDAO.getAllHeadLine().size());
-
     }
 
     @Test
@@ -50,7 +48,6 @@ public class HeadLineDAOTest {
         headLineDAO.addHeadLine(headLine);
         Assert.assertNotEquals(count,headLineDAO.getAllCategoryHeadLine(Category.AUTOMOBILES).size());
         Assert.assertEquals(count+1,headLineDAO.getAllCategoryHeadLine(Category.AUTOMOBILES).size());
-
     }
 
     @Test
@@ -86,7 +83,6 @@ public class HeadLineDAOTest {
         List<HeadLine> headLineList2 = headLineDAO.getAllHeadLine();
         HeadLine headLineFromDB2 = headLineList2.get(0);
         Assert.assertEquals(headLineFromDB2.getTitle(),headLineFromDB.getTitle());
-
     }
 
 }

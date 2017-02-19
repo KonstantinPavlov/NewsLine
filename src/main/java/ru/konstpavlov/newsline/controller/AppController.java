@@ -65,7 +65,6 @@ public class AppController {
         return modelAndView;
     }
 
-
     @RequestMapping(value = "/addNews", method = RequestMethod.POST)
     public ModelAndView addNewHeadLine(@ModelAttribute("headline") HeadLine headline){
         headline.setDate(new Date());

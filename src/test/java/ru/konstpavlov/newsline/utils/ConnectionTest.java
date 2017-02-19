@@ -29,11 +29,8 @@ public class ConnectionTest {
         url.append("user=root&");
         // password
         url.append("password=root");
-
         System.out.println("Request: " + url);
-
     }
-
     @Test
     public void registerDriverTest() {
         try {
@@ -43,7 +40,6 @@ public class ConnectionTest {
             Assert.assertTrue(true);
         }
     }
-
     @Test
     public void getConnectionTest() {
         try {
@@ -52,9 +48,6 @@ public class ConnectionTest {
             Assert.fail("Getting connection throw error " + exc);
             Assert.assertTrue(true);
         }
-
         Assert.assertNotNull(connection);
     }
-
-
 }
