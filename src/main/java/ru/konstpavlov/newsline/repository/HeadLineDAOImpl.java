@@ -42,6 +42,7 @@ public class HeadLineDAOImpl implements HeadLineDAO {
     @Override
     public void updateHeadLine(HeadLine headLine) {
         sessionFactory.getCurrentSession().update(headLine);
+        sessionFactory.getCurrentSession().flush();
     }
 
     @Override
